@@ -21,7 +21,7 @@
     ``` bash
     dotnet user-secrets set AdminPassword password
     ```
-1. Spend some time seeding your data: Use the `OnModelCreating` method in the `HouseRulesDbContext` class ( or `YourProjectNameDbContext` class ) to add data to the database when it is created. There should already be code for creating an Admin role, an admin `IdentityUser`, and giving that `IdentityUser` the role of `Admin` with a row in `UserRoles`. Add more initial data based on the project's need.
+1. Spend some time seeding your data: Use ERD to create classes under Models folder. Use the `OnModelCreating` method in the `HouseRulesDbContext` class ( or `YourProjectNameDbContext` class ) to add data to the database when it is created. There should already be code for creating an Admin role, an admin `IdentityUser`, and giving that `IdentityUser` the role of `Admin` with a row in `UserRoles`. Add more initial data based on the project's need.
 1. Create the database migration:
     ``` bash 
     dotnet ef migrations add InitialCreate
@@ -31,7 +31,7 @@
     dotnet ef database update
     ```
 1. In the `client` directory inside the project directory, run `npm install`
-1. In `package.json` add this under the first line:
+1. (might have already been there) In `package.json` add this under the first line:
     ```json
     "proxy": "https://localhost:5001",
     ```
